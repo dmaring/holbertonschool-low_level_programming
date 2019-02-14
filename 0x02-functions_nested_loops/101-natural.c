@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include "holberton.h"
 
 /**
  * main - prints sum of all numbers under 1024 divisible by 3 and 5
@@ -14,7 +13,7 @@ int main(void)
 	for (i = 0; i < 1024; i++)
 	{
 		if ((i % 3 == 0) || (i % 5 == 0))
-			sum += i;
+			sum = sum + i;
 	}
 	printf("%i\n", sum);
 
