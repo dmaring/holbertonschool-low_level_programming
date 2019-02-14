@@ -13,14 +13,14 @@ int main(void)
 	unsigned long c = 3;
 
 	printf("1, 2, ");
-	for (i = 0; i <= 48; i++)
+	for (i = 0; i < 48; i++)
 	{
 		c = a + b;
 		printf("%ld", c);
 		a = b;
 		b = c;
 
-		if (i != 48)
+		if (i != 47)
 			printf(", ");
 	}
 	printf("\n");
