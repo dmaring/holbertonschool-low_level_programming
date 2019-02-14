@@ -6,25 +6,14 @@
  */
 void more_numbers(void)
 {
-	int i, j, pf, ps;
+	int i, j;
+	char numbers[] = "01234567891011121314\0";
 
-	for (i = 0; i <= 10; i++)
+	for (i = 0; i < 10; i++)
 	{
-		for (j = 0; j < 15; j++)
+		for (j = 0; numbers[j] != '\0'; j++)
 		{
-
-			if (j <= 9)
-				pf = j;
-			else
-			{
-				pf = j / 10;
-				ps = j % 10;
-			}
-			_putchar(pf + '0');
-
-			if (ps)
-				_putchar(ps + '0');
-			ps = 0;
+			_putchar(numbers[j]);
 		}
 		_putchar('\n');
 	}
