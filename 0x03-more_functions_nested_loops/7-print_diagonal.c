@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * print_diagnoal - print a diagonal line the length of n
+ * print_diagonal - print a diagonal line the length of n
  * @n: length of the diagonal line
  *
  */
