@@ -19,11 +19,11 @@ void rev_string(char *s)
 	for (i = 0; i < length - 1; i++)
 		end++;
 
-	for (i = 0; i < length / 2; i ++)
+	for (i = 0; i < length / 2; i++)
 	{
-		temp = *beg;
-		*beg = *end;
-		*end = temp;
+		temp = *end;
+		*end = *beg;
+		*beg = temp;
 
 		beg++;
 		end--;
@@ -31,7 +31,7 @@ void rev_string(char *s)
 }
 /**
  * _strlen - find the length of a string
- * @i: input string pointer
+ * @s: input string pointer
  *
  * Return: string length before '\0'
  */
