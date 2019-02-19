@@ -20,6 +20,8 @@ void puts_half(char *str)
 		for (i = (len - 1) / 2; i < len; i++)
 			_putchar(str[i]);
 
+	_putchar('\n');
+
 }
 /**
  * _strlen - find and return the length of a string
