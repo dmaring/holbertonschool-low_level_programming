@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include <stdio.h>
 
 /**
  * swap_int - swaps value at pointer a to value at pointer b & vice versa
