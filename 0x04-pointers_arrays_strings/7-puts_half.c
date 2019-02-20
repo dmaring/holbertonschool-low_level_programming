@@ -19,9 +19,7 @@ void puts_half(char *str)
 	else
 		for (i = (len - 1) / 2; i < len; i++)
 			_putchar(str[i]);
-
 	_putchar('\n');
-
 }
 /**
  * _strlen - find and return the length of a string
@@ -32,10 +30,8 @@ void puts_half(char *str)
 int _strlen(char *s)
 {
 	int i;
-
 	i = 0;
 	while (s[i] != '\0')
 		i++;
-
 	return (i);
 }
