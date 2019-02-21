@@ -22,7 +22,7 @@ void print_rev(char *s)
  * _strlen - finds the length of a given string
  * @s: string input
  *
- * Return: length of a string preceding NUL character '\0'
+ * Return: length of a string
  */
 int _strlen(char *s)
 {

@@ -33,7 +33,7 @@ void rev_string(char *s)
  * _strlen - find the length of a string
  * @s: input string pointer
  *
- * Return: string length before '\0'
+ * Return: string length 
  */
 int _strlen(char *s)
 {
