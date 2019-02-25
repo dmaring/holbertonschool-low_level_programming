@@ -1,4 +1,5 @@
 #include "holberton.h"
+#define NULL 0
 
 /**
  * _strchr - returns a pointer to the first occurrence of the character c
@@ -22,5 +23,5 @@ char *_strchr(char *s, char c)
 		i++;
 	}
 
-	return (0);
+	return (NULL);
 }
