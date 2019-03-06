@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * free_grind - frees a 2 dimensional grid from memory
+ * free_grid - frees a 2 dimensional grid from memory
  * @grid: input 2 dim grid as double pointer
  * @height: input height as integer
  *
@@ -17,4 +17,3 @@ void free_grid(int **grid, int height)
 
 	free(grid);
 }
-	
