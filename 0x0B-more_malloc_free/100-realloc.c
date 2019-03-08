@@ -3,9 +3,9 @@
 
 /**
  * _realloc - function that reallocates a memory block using malloc and free
- * @ptr: 
- * @old_size:
- * @new_size:
+ * @ptr: ptr to memory space
+ * @old_size: old memory size
+ * @new_size: new memory size
  *
  * Return: pointer to new sized memory allocation
  */
