@@ -38,6 +38,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		}
 	}
 	if (n >= size_s2)
+		;
+	else
 		size_s2 = n;
 	ptr = malloc(sizeof(char) * (size_s1 + size_s2 + 1));
 	if (ptr == NULL)
