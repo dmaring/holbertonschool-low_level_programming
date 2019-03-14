@@ -1,35 +1,52 @@
+#include <stdlib.h>
 #include <stdio.h>
-#include <ctype.h>
 
 /**
- * main - program that prints opcodes
- * @argc: number of arguments passed at cli
- * @argv: vector of pointers to arguments passed at cli
+ * print_opcodes - print the opcodes of this program
+ * @a: address of the main function
+ * @n: number of bytes to print
  *
  * Return: void
  */
-void main(int argc, char *argv[])
+void print_opcodes(char *a, int n)
 {
-	int bytes;
-	
+	int i;
+
+	for (i = 0; i < n; i++)
+	{
+		printf("%.2hhx", a[i]);
+		if (i < n - 1)
+			printf(" ");
+	}
+	printf("\n");
+
+}
+
+/**
+ * main - prints the opcodes of its own main function
+ * @argc: number of arguments passed to the function
+ * @argv: array of pointers to arguments
+ *
+ * Return: always O
+ */
+int main(int argc, char **argv)
+{
+	int n;
+
 	if (argc != 2)
 	{
 		printf("Error\n");
 		exit(1);
 	}
-
-	bytes = atoi(argv[1]);
-
-	if (bytes < 0)
+	n = atoi(argv[1]);
+	if (n < 0)
 	{
 		printf("Error\n");
 		exit(2);
 	}
-	
-	
-	
-	
+	print_opcodes((char *)&main, n);
+	return (0);
 }
 
- If the number of argument is not the correct one, print Error, followed by a new line, and exit with the status 1
-If the number of bytes is negative, print Error, followed by a new line, and exit with the status 2
+
+	
