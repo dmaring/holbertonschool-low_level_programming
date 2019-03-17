@@ -11,22 +11,25 @@ void print_all(const char * const format, ...)
 	int i = 0;
 	va_list argList;
 	va_list listCopy;
+	int flag;
 	/** initialize argList with arg_start **/
 	va_start(argList, format);
 	/** loop through format string **/
-	i = 0;
 	while (format[i])
 	{
 		switch (format[i])
 		{
 		case ('c'):
 			printf("%c", va_arg(argList, int));
+			flag = 1;
 			break;
 		case ('i'):
 			printf("%i", va_arg(argList, int));
+			flag = 1;
 			break;
 		case ('f'):
 			printf("%f", va_arg(argList, double));
+			flag = 1;
 			break;
 		case ('s'):
 			va_copy(listCopy, argList);
@@ -34,14 +37,18 @@ void print_all(const char * const format, ...)
 				printf("%s", va_arg(argList, char *));
 			else
 				printf("(nil)");
-			va_end(listCopy);
+			flag = 1;
+			break;
+		default:
+			flag = 0;
 		}
-		if (format[i + 1])
+		if (format[i + 1] && flag)
 		{
 			printf(", ");
 		}
 		i++;
 	}
 	printf("\n");
+	va_end(listCopy);
 	va_end(argList);
 }
