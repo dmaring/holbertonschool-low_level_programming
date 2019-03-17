@@ -8,14 +8,15 @@
  */
 void print_all(const char * const format, ...)
 {
-	int i = 0;
+	int i, flag;
+	char *str;
 	va_list argList;
-	va_list listCopy;
-	int flag;
 
 	va_start(argList, format);
+	i = 0;
 	while (format[i])
 	{
+		flag = 0;
 		switch (format[i])
 		{
 		case ('c'):
@@ -31,18 +32,12 @@ void print_all(const char * const format, ...)
 			flag = 1;
 			break;
 		case ('s'):
-			va_copy(listCopy, argList);
-			if (va_arg(listCopy, char *))
-			{
-				printf("%s", va_arg(argList, char *));
-				break;
-			}
-			printf("(nil)");
-			va_arg(argList, char *);
+			str = va_arg(argList, char *);
+			if (str == NULL)
+				str = "(nil)";
+			printf("%s", str);
 			flag = 1;
 			break;
-		default:
-			flag = 0;
 		}
 		if (format[i + 1] && flag)
 			printf(", ");
