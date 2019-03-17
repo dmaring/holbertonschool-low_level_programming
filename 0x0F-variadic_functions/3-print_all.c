@@ -38,6 +38,7 @@ void print_all(const char * const format, ...)
 				break;
 			}
 			printf("(nil)");
+			va_arg(argList, char *);
 			flag = 1;
 			break;
 		default:
