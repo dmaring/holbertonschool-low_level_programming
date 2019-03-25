@@ -21,6 +21,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	new_node->n = n;
 
 	i = 0;
+	/** find the element right before idx */
 	while (i < (idx - 1) && temp->next != NULL)
 	{
 		temp = temp->next;
