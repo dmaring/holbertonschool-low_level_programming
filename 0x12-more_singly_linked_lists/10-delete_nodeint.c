@@ -20,18 +20,9 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 	/** not an empty list and index is first index */
 	if (index == 0)
 	{
-		if ((*head)->next != NULL)
-		{
-			*head = (*head)->next;
-			free(temp);
-			return (1);
-		}
-		else
-		{
-			*head = NULL;
-			free(temp);
-			return (1);
-		}
+		*head = (*head)->next;
+		free(temp);
+		return (1);
 	}
 
 	i = 0;
