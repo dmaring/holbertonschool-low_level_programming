@@ -2,7 +2,7 @@
 
 /**
  * free_listint_safe - function that frees a linked list
- * @head: pointer to beginning of linked list linsint_t
+ * @h: double pointer to beginning of linked list linsint_t
  *
  * Return: number of nodes in the list
  */
