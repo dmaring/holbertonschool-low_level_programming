@@ -1,6 +1,6 @@
 # Low Level Programming & Algorithms
 
-<img src="https://s3.amazonaws.com/intranet-projects-files/holbertonschool-low_level_programming/212/cisfun.jpg" width="500">
+<img src="https://hybridivy.files.wordpress.com/2016/05/screen-shot-2016-05-19-at-11-52-11-pm.png" width="500">
 
 ## Welcome
 Thank you for visiting my programming projects. The majority of the code is written in C.
