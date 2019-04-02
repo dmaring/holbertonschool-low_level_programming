@@ -11,7 +11,7 @@ void print_binary(unsigned long int n)
 	unsigned long i;
 	int flag = 0;
 
-	int bits = sizeof(n) * 8 - 1;
+	int bits = sizeof(n) * 8;
 
 	if (n == 0)
 	{
@@ -19,7 +19,7 @@ void print_binary(unsigned long int n)
 		return;
 	}
 
-	while (bits >= 0)
+	while (bits > 0)
 	{
 		i = n >> bits;
 
