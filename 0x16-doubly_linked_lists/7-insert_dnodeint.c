@@ -1,0 +1,51 @@
+#include "lists.h"
+
+/**
+ * insert_dnodeint_at_index - insert a node at index
+ * @h: pointer to pointer to head of list
+ * @idx: index to insert new node
+ * @n: number to add to member of new node
+ *
+ * Return: address of the new node or NULL if failure
+ */
+dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
+{
+	dlistint_t *new = NULL;
+	dlistint_t *temp = *h;
+	dlistint_t *found_node = *h;
+	size_t listlen = 0;
+	size_t i = 0;
+
+	while (temp)
+	{
+		listlen++;
+		temp = temp->next;
+	}
+	/* check if idx is out of bounds */
+	if (idx > listlen - 1)
+		return (NULL);
+	/* check to insert at head */
+	if (idx == 0)
+		return (add_dnodeint(h, n));
+	/* check to insert node at end */
+	if (idx == listlen - 1)
+		return (add_dnodeint_end(h, n));
+	/* insert node at idx if not at end or beg */
+	new = malloc(sizeof(dlistint_t));
+	if (!new)
+		return (NULL);
+	new->n = n;
+	new->next = NULL;
+	new->prev = NULL;
+
+	while (i < idx)
+	{
+		found_node = found_node->next;
+		i++;
+	}
+	found_node->prev->next = new;
+	new->next = found_node;
+	found_node->prev = new;
+
+	return (new);
+}
