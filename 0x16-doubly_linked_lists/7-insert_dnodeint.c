@@ -23,9 +23,9 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		listlen++;
 		temp = temp->next;
 	}
-	if (idx > listlen - 1 || h == NULL)
+	if (idx > listlen || h == NULL)
 		return (NULL);
-	if (idx == listlen - 1)
+	if (idx == listlen)
 		return (add_dnodeint_end(h, n));
 	new = malloc(sizeof(dlistint_t));
 	if (!new)
