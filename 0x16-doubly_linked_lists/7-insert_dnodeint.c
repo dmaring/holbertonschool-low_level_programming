@@ -16,37 +16,37 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	size_t listlen = 0;
 	size_t i = 0;
 
+	if (*h == NULL)
+		return (add_dnodeint(h, n));
+	if (idx == 0)
+		return (add_dnodeint(h, n));
 	while (temp)
 	{
 		listlen++;
 		temp = temp->next;
 	}
-	/* check if idx is out of bounds */
 	if (idx > listlen - 1)
 		return (NULL);
-	/* check to insert at head */
-	if (idx == 0)
-		return (add_dnodeint(h, n));
-	/* check to insert node at end */
 	if (idx == listlen - 1)
 		return (add_dnodeint_end(h, n));
-	/* insert node at idx if not at end or beg */
 	new = malloc(sizeof(dlistint_t));
 	if (!new)
 		return (NULL);
 	new->n = n;
 	new->next = NULL;
 	new->prev = NULL;
-
-	while (i < idx)
+	while (i < idx && found_node)
 	{
 		found_node = found_node->next;
 		i++;
 	}
-	found_node->prev->next = new;
-	new->prev = found_node->prev;
-	new->next = found_node;
-	found_node->prev = new;
-
-	return (new);
+	if (i == idx)
+	{
+		found_node->prev->next = new;
+		new->prev = found_node->prev;
+		new->next = found_node;
+		found_node->prev = new;
+		return (new);
+	}
+	return (NULL);
 }
