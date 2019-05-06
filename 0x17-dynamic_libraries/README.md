@@ -12,13 +12,9 @@ A project on:
 ### Mandatory
 **[libholberton.so](libholberton.so)** - dynamic library containing various functions
 
-**[1-args.c](1-args.c)** - prints the number of arguments passed into it.
+**[holberton.h](holberton.h)** - header file containing all of the prototypes used in exercises
 
-**[2-args.c](2-args.c)** - prints all arguments it receives.
-
-**[3-mul.c](3-mul.c)** - multiplies two numbers passed to the program as arguments.
-
-**[4-add.c](4-add.c)** - adds all numbers passed to the program as arguments.
+**[1-create_dynamic_lib.sh](1-create_dynamic_lib.sh)** - script that creates a shared library from all of the .c files in the current directory
 
 ### Advanced
-**[100-change.c](100-change.c)** - prints the minimum number of coins to make change for an amount of money in cents.
+**[100-operations.so](100-operations.so)** - dynamic shared library that contains C files that can be called from Python
