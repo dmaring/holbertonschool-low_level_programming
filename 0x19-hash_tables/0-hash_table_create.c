@@ -17,7 +17,7 @@ hash_table_t *hash_table_create(unsigned long int size)
 	if (hl == NULL)
 		return (NULL);
 
-	/** create a hash_table and assign list of pointers **/
+	/** create a hash_table and assign list of pointers to array **/
 	ht = calloc(1, sizeof(hash_table_t));
 	if (ht == NULL)
 		return (NULL);
@@ -25,5 +25,4 @@ hash_table_t *hash_table_create(unsigned long int size)
 	ht->array = hl;
 
 	return (ht);
-
 }
