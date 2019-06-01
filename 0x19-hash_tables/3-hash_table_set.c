@@ -11,16 +11,18 @@
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int key_idx;
-	hash_node_t **array = ht->array;
-	hash_node_t *new_next;
-	hash_node_t *new_node;
+	hash_node_t **array = NULL;
+	hash_node_t *new_next = NULL;
+	hash_node_t *new_node = NULL;
 
 	/* check if caller passing admissable arguments */
 	if (!ht || !key || !*key || !value)
 		return (0);
 
+	array = ht->array;
+
 	key_idx = key_index((unsigned char *)key, ht->size);
-	/* printf("Key_index is: %lu\n", key_idx); */
+	printf("Key_index is: %lu\n", key_idx);
 	/* check if key_idx already exists */
 	if (array[key_idx])
 		/* if list isn't empty set new_next to current head node */
