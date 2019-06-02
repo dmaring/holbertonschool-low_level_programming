@@ -24,20 +24,20 @@ void hash_table_print(const hash_table_t *ht)
 	while (i < ht->size)
 	{
 		if (array[i])
+		{
+			/* valid pointer found */
+			print_comma_flag = 1;
+			seeker = array[i];
+			while (seeker)
 			{
-				/* valid pointer found */
-				print_comma_flag = 1;
-				seeker = array[i];
-				while(seeker)
-				{
-					printf("'%s': ", seeker->key);
-					printf("'%s'", seeker->value);
-					if (seeker->next)
-						printf(", ");
-					seeker = seeker->next;
-				}
+				printf("'%s': ", seeker->key);
+				printf("'%s'", seeker->value);
+				if (seeker->next)
+					printf(", ");
+				seeker = seeker->next;
 			}
-		if (array[i+1] && print_comma_flag)
+		}
+		if (array[i + 1] && print_comma_flag)
 			printf(", ");
 		i++;
 	}
