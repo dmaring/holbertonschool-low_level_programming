@@ -10,13 +10,14 @@
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
 	unsigned long int key_idx;
-	hash_node_t **array = ht->array;
-	hash_node_t *seeker;
+	hash_node_t **array = NULL;
+	hash_node_t *seeker = NULL;
 
 	/* check if caller passing admissable arguments */
 	if (!ht || !key || !*key)
 		return (NULL);
 
+	array = ht->array;
 	/* retrieve hashed key_idx */
 	key_idx = key_index((unsigned char *)key, ht->size);
 

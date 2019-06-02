@@ -22,7 +22,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	array = ht->array;
 
 	key_idx = key_index((unsigned char *)key, ht->size);
-	printf("Key_index is: %lu\n", key_idx);
+	/* printf("Key_index is: %lu\n", key_idx); */
 	/* check if key_idx already exists */
 	if (array[key_idx])
 		/* if list isn't empty set new_next to current head node */
