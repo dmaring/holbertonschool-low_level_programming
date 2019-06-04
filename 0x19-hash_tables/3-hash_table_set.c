@@ -60,7 +60,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	else
 		/* if list empty set new_next to NULL */
 		new_next = NULL;
-	/* create new hash_node */
 	new_node = malloc(sizeof(hash_node_t));
 	/* duplicate and set value and key */
 	new_node->value = strdup(value);
@@ -68,5 +67,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	new_node->next = new_next;
 	/* set linked list head to new_node */
 	array[key_idx] = new_node;
+	printf("New node set: %s\n", (array[key_idx])->value);
 	return (1);
 }
