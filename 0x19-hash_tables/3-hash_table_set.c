@@ -40,7 +40,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 	array = ht->array;
 	key_idx = key_index((unsigned char *)key, ht->size);
-	/* check if key_idx already exists aka slot has data */
 	if (array[key_idx])
 	{
 		/* traverse linked list for key == array[key_idx]->key */
@@ -61,6 +60,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		/* if list empty set new_next to NULL */
 		new_next = NULL;
 	new_node = malloc(sizeof(hash_node_t));
+	if (new_node == NULL)
+		return (0);
 	/* duplicate and set value and key */
 	new_node->value = strdup(value);
 	new_node->key = strdup(key);
