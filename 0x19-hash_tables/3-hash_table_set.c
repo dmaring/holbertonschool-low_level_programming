@@ -36,7 +36,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *new_node = NULL;
 
 	/* check if caller passing admissable arguments */
-	if (!ht || !key || !*key || !value)
+	if (!ht || !*ht || !key || !*key || !value)
 		return (0);
 	array = ht->array;
 	key_idx = key_index((unsigned char *)key, ht->size);
