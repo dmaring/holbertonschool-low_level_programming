@@ -13,7 +13,7 @@ hash_table_t *hash_table_create(unsigned long int size)
 	hash_node_t **hl;
 
 	/** create a list of pointers of size and assign it to hash_table**/
-	hl = calloc(size, sizeof(hash_node_t **));
+	hl = calloc(size, sizeof(hash_node_t *));
 	if (hl == NULL)
 		return (NULL);
 
