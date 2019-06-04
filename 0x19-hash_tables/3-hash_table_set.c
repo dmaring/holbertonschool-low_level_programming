@@ -2,10 +2,10 @@
 
 /**
  * replace_node_value - set value of nodes with same key string
- * @target - pointer to node target to change value
- * @value - value to set in node
+ * @target: pointer to node target to change value
+ * @value: value to set in node
  *
- * Return 1 if success, 0 if failure
+ * Return: 1 if success, 0 if failure
  */
 int replace_node_value(hash_node_t *target, const char *value)
 {
@@ -38,19 +38,14 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	/* check if caller passing admissable arguments */
 	if (!ht || !key || !*key || !value)
 		return (0);
-
 	array = ht->array;
-
 	key_idx = key_index((unsigned char *)key, ht->size);
-	/* printf("Key_index is: %lu\n", key_idx); */
 	/* check if key_idx already exists aka slot has data */
 	if (array[key_idx])
 	{
-		/* if list isn't empty, make sure key string is unique */
-		/* if not, rewrite found node with new value */
 		/* traverse linked list for key == array[key_idx]->key */
 		seeker = array[key_idx];
-		while(seeker)
+		while (seeker)
 		{
 			if (strcmp(seeker->key, key) == 0)
 			{
@@ -59,28 +54,19 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			}
 			seeker = seeker->next;
 		}
-		/* if list isn't empty and key string unique set new_next
-		   to the current head of the list */
+		/* if list isn't empty and key string unique set new_next */
 		new_next = array[key_idx];
 	}
 	else
 		/* if list empty set new_next to NULL */
 		new_next = NULL;
-
 	/* create new hash_node */
 	new_node = malloc(sizeof(hash_node_t));
-
-	/* set and duplicate value and key */
+	/* duplicate and set value and key */
 	new_node->value = strdup(value);
 	new_node->key = strdup(key);
 	new_node->next = new_next;
-
 	/* set linked list head to new_node */
 	array[key_idx] = new_node;
-
-	/* printf("array[%lu]->value: %s\n", key_idx,  array[key_idx]->value); */
-	/* printf("array[%lu]->key: %s\n", key_idx, array[key_idx]->key); */
-
 	return (1);
-
 }
