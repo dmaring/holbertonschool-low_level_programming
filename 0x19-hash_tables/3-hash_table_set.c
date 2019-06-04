@@ -67,6 +67,5 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	new_node->next = new_next;
 	/* set linked list head to new_node */
 	array[key_idx] = new_node;
-	printf("New node set: %s\n", (array[key_idx])->value);
 	return (1);
 }
