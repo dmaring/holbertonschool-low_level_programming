@@ -36,9 +36,12 @@ void selection_sort(int *array, size_t size)
 			}
 		}
 		/* swap selected with min */
-		temp = array[selected_idx];
-		array[selected_idx] = array[min_idx];
-		array[min_idx] = temp;
-		print_array(array, size);
+		if (array[selected_idx] != array[min_idx])
+		{
+			temp = array[selected_idx];
+			array[selected_idx] = array[min_idx];
+			array[min_idx] = temp;
+			print_array(array, size);
+		}
 	}
 }
