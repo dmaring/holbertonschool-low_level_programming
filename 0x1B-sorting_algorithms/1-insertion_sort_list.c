@@ -28,16 +28,21 @@ void insertion_sort_list(listint_t **list)
 			cp = c->prev;
 			cn = c->next;
 			temp_cp_prev = cp->prev;
-			/* swap out c */
+
+			/* set new values for cp */
 			cp->prev = c;
 			cp->next = cn;
+
+			/* check whether next node is NULL */
 			if (cn)
 				cn->prev = cp;
+
 			c->next = cp;
+			/* check whether previous node is NULL */
 			if (temp_cp_prev)
 			{
 				c->prev = temp_cp_prev;
-				c->prev->next = c;
+				temp_cp_prev->next = c;
 			}
 			else
 			{
