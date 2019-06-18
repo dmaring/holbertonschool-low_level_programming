@@ -15,10 +15,8 @@ void insertion_sort_list(listint_t **list)
 	listint_t *target_next = NULL;
 	listint_t *temp_cp_prev = NULL;
 
-
 	if (!(*list) || !(*list)->next)
 		return;
-
 	target = (*list)->next;
 	while (target)
 	{
@@ -37,7 +35,10 @@ void insertion_sort_list(listint_t **list)
 				cn->prev = cp;
 			c->next = cp;
 			if (temp_cp_prev)
+			{
 				c->prev = temp_cp_prev;
+				c->prev->next = c;
+			}
 			else
 			{
 				c->prev = NULL;
