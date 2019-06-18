@@ -4,7 +4,7 @@
  * insertion_sort_list -  a function that sorts a doubly linked
  * list of integers in ascending order using the Insertion sort algorithm
  *
- * @list: head of input doubly linked list
+ * @list: head doubly linked list
  */
 void insertion_sort_list(listint_t **list)
 {
@@ -24,12 +24,13 @@ void insertion_sort_list(listint_t **list)
 	{
 		c = target;
 		target_next = target->next;
-		while (c && (c->n < c->prev->n))
+		while (c->prev && (c->n < c->prev->n))
 		{
+			/* setup pointers for sanity */
 			cp = c->prev;
 			cn = c->next;
 			temp_cp_prev = cp->prev;
-			/* swap current and current->prev */
+			/* swap out c */
 			cp->prev = c;
 			cp->next = cn;
 			if (cn)
@@ -44,7 +45,6 @@ void insertion_sort_list(listint_t **list)
 			}
 			print_list(*list);
 		}
-
 		target = target_next;
 	}
 }
