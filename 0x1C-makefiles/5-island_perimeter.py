@@ -17,6 +17,13 @@ def island_perimeter(grid):
         while cell < len(grid[row]):
             if grid[row][cell] == 1:
                 conn_count = 0
+
+                # check if row is first or very last grid
+                if row == 0 or row == len(grid) - 1:
+                    conn_count += 1
+                # check if cell is first or last in row
+                if cell == 0 or cell == len(grid[row]) - 1:
+                    conn_count += 1
                 # check above, below, left, right of cell
                 if cell > 0 and grid[row][cell - 1] == 1:
                     conn_count += 1
