@@ -10,21 +10,21 @@ def island_perimeter(grid):
     perimeters = [4, 3, 2, 1, 0]
     ret_perim = 0
     conn_count = 0
-    row, cell = 1, 1
+    row, cell = 0, 0
 
-    while row < len(grid) - 1:
+    while row < len(grid):
         cell = 0
-        while cell < len(grid[row]) - 1:
+        while cell < len(grid[row]):
             if grid[row][cell] == 1:
                 conn_count = 0
                 # check above, below, left, right of cell
-                if grid[row][cell - 1] == 1:
+                if cell > 0 and grid[row][cell - 1] == 1:
                     conn_count += 1
-                if grid[row][cell + 1] == 1:
+                if cell < len(grid[row]) and grid[row][cell + 1] == 1:
                     conn_count += 1
-                if grid[row - 1][cell] == 1:
+                if row < len(grid[row]) and grid[row - 1][cell] == 1:
                     conn_count += 1
-                if grid[row + 1][cell] == 1:
+                if row > 0 and grid[row + 1][cell] == 1:
                     conn_count += 1
                 ret_perim += perimeters[conn_count]
             cell = cell + 1
