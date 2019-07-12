@@ -30,8 +30,6 @@ def island_perimeter(grid):
                 if row > 0 and grid[row - 1][cell] == 1:
                     conn_count += 1
                 ret_perim += perimeters[conn_count]
-                # print("Row {} Cell {} has {}".format(row, cell,
-                # perimeters[conn_count]))
             cell = cell + 1
         row = row + 1
 
