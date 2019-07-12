@@ -24,7 +24,7 @@ def island_perimeter(grid):
                 if cell < len(grid[row]) - 1 and grid[row][cell + 1] == 1:
                     conn_count += 1
                 # check cell below current
-                if row < len(grid[row]) - 1 and grid[row + 1][cell] == 1:
+                if row < len(grid) - 1 and grid[row + 1][cell] == 1:
                     conn_count += 1
                 # check cell above current
                 if row > 0 and grid[row - 1][cell] == 1:
