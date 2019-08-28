@@ -10,7 +10,7 @@
  */
 size_t get_min(int n, int m)
 {
-	return((n < m) ? n : m);
+	return ((n < m) ? n : m);
 }
 
 /**
@@ -30,7 +30,7 @@ int jump_search(int *array, size_t size, int value)
 	size_t prev = 0;
 
 	if (!array)
-		return(-1);
+		return (-1);
 	printf("Value checked array[%lu] = [%lu]\n",
 	       (unsigned long)prev, (unsigned long)array[prev]);
 	while (array[step] < value)
@@ -53,14 +53,9 @@ int jump_search(int *array, size_t size, int value)
 		if (array[prev] == value)
 			return (prev);
 		if (prev > (size - 1))
-			return (- 1);
+			return (-1);
 		prev++;
 	}
 
 	return (-1);
-	/* printf("Value checked array[%lu] = [%lu]\n", */
-	/*        (unsigned long)prev, (unsigned long)array[prev]); */
-	/* printf("Value found between indexes [%lu] and [%lu]\n", */
-	/*        (unsigned long)(prev), */
-	/*        (unsigned long)(step)); */
 }
