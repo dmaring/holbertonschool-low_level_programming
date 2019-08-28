@@ -39,7 +39,9 @@ int search(int value, int low, int high, int *array)
 		print_array(low, high + 1, array);
 		mid = (low + high) / 2;
 
-		if (array[mid] == value && array[mid - 1] != value)
+		if (array[mid] == value && low == 0)
+			return (mid);
+		else if (array[mid] == value && array[mid - 1] != value)
 			return (mid);
 		else if (array[mid] == value && array[mid - 1] == value)
 			return (search(value, low, mid, array));
